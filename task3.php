@@ -12,11 +12,12 @@ $money = 0;
 for ($month = 1; $month <= 24; $month ++) {
 	
 	$credit = ( $credit * $percent ) + $commission - $available;
-	$money = $money + $available;
-	echo "{$month} месяц спустя: долг = {$credit} руб, выплачено всего {$money} руб. <br>";
+    $money = $money + $available;
+    echo "{$month} месяц спустя: долг = {$credit} руб, выплачено всего {$money} руб. <br>";
 
-      if ($credit < 0) {
-    echo "Погасил кредит  через {$month} голодных месяц : долг = {$credit} руб, Айфон обошёлся в {$money} кусков. <br>";
+      if ($credit < 300) {
+        $money = $money + $credit;
+    echo "Погасил кредит  через {$month} голодных месяц, айфон обошёлся в {$money} кусков. <br>";
           break;
       }
 }
